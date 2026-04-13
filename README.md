@@ -1,1 +1,153 @@
-initial file
+BiocNA 2026 Hackathon
+================
+
+- [Introduction](#introduction)
+- [Documents and communication](#documents-and-communication)
+  - [Remote participation](#remote-participation)
+  - [Location](#location)
+- [Projects](#projects)
+  - [Developer Day Proposals](#developer-day-proposals)
+  - [R/CUDA bindings](#rcuda-bindings)
+  - [Benchmarking LLM produced
+    workflows](#benchmarking-llm-produced-workflows)
+  - [General bughunt](#general-bughunt)
+- [Other things!](#other-things)
+
+**Bioconductor centric hackathons!**
+
+# Introduction
+
+A general bioconductor-centric hackathon is being planned for August
+13th and 14th following [Bioc North
+America](https://bioc2026.bioconductor.org/) in Seattle, Washington
+(USA). A few projects have already been proposed and some space is being
+reserved for projects proposed at Developer Day, but participants are
+welcome to bring their own as long as those ideas have been communicated
+to organisers beforehand. General bug hunting or feature additions in
+existing packages that are willing to accept pull requests will also be
+supported.
+
+Participants will be expected to adhere to the [Bioconductor code of
+conduct](https://bioconductor.github.io/bioc_coc_multilingual/).
+
+# Documents and communication
+
+This README page will serve as a hub for documents, repos, and links
+associated with the event.
+
+## Remote participation
+
+Information on remote participation will be included here.
+
+## Location
+
+TBA
+
+# Projects
+
+## Developer Day Proposals
+
+There have been a few ongoing discussions about Developer Day
+activities. Space at this event is being reserved for projects proposed
+during those activities.
+
+## R/CUDA bindings
+
+This project is expected to continue on from the hackathon taking place
+in Turku in June, and the description here will remain identical until
+after that event.
+
+The inaccessibility of alternative compute devices in the R language has
+been a missing feature that most R users have been content to live
+without. The rugged landscape of alternative compute frameworks and
+hardware providers have also made it difficult for the R community to
+coalesce on a paradigm for access that would fit well within R as a
+language and R as a research ecosystem. Bringing alternative compute
+access into R, particularly with CUDA and NVIDIA devices would improve
+the value of R as a skill for graduates leaving academia, increase the
+throughput and efficiency that research computing in R can accomplish,
+and expand the versatility of R generally.
+
+The goal of this project is to build infrastructure for developers who
+want their computational tools to be able to leverage available CUDA
+devices on systems where they are present. Examples of programmatic
+access to
+[OpenCL](https://cran.r-project.org/web/packages/OpenCL/index.html) and
+[Metal](https://github.com/npcooley/ACFmetal) in R already exist and
+contain lessons in terms of design paradigms, reasonable expectations
+for users / developers, and maintainability. Ideally this package will
+be submitted to CRAN upon completion.
+
+This is not untrodden ground. Attempts have
+[been](https://github.com/yuanli22/RCUDA)
+[made](https://cran.r-project.org/web/packages/gmatrix/index.html)
+[at](https://cran.r-project.org/web/packages/gpuR/index.html)
+[providing](https://cran.r-project.org/web/packages/cudaBayesreg/index.html)
+[GPU](https://cran.r-project.org/web/packages/gputools/index.html)
+support in R before, and of those only Simon Urbanek’s
+[OpenCL](https://cran.r-project.org/web/packages/OpenCL/index.html) R
+package seems to have survived the test of time as R specific
+infrastructure. Several
+[existing](https://cran.r-project.org/web/packages/torch/index.html)
+[packages](https://cran.r-project.org/web/packages/tensorflow/index.html)
+[allow](https://cran.r-project.org/web/packages/keras/index.html)
+[GPU](https://cran.r-project.org/web/packages/h2o4gpu/index.html)
+support through tools they wrap around, but do not facilitate R
+development. Therefore this project will likely be as much about
+planning and design as it will be about writing code.
+
+Key considerations:
+
+- What infrastructure is necessary for developers to be able call CUDA
+  code in a function when a device is available?
+- When should kernel functions be compiled? Package installation?
+  Package loading? On request by the user?
+- If the end goal is for *developers* to be able to enable alternative
+  compute use through a function argument, what do *users* supply to
+  that argument, and what do users need to know - or have done - ahead
+  of time for this kind of behavior to be reliable.
+- The underlying structure of the package must be maintainable.
+- Implementations within the package must also be flexible. We
+  realistically shouldn’t expect to find NVIDIA hardware on an Apple OS,
+  so developers should be able to rely on tooling within this package
+  exiting or warning gracefully in cases where a user asks for resources
+  that don’t exist. Developers should also be comfortable having their
+  own packages rely on this package, most likely through the `Suggests`
+  field in the description file.
+
+## Benchmarking LLM produced workflows
+
+LLMs have increased in complexity at a rapid pace and present the
+opportunity for considerable improvements in work product generation in
+academia and beyond. However leveraging them appropriately remains a
+difficult task, and benchmarking the performance of scripts and
+workflows that LLMs produce has been elusive. For this project we
+propose the construction of a small library *standardized workflow
+components* for tasks in bioinformatics generally. Tasks like genome
+assembly, multiple sequence alignment, tree construction, feature
+annotation, and taxonomic assignment can all be accomplished with a
+variety of tools, some maintained and some deprecated. What tools LLMs
+choose to provide to users for these tasks when generating workflows
+matter in every way, from appropriateness to accuracy, to resource
+consumption, to portability and reproducibility.
+
+Being able to interrogate an LLM provided workflow for efficiency and
+correlation to a standard can go a long way in preparing the community
+for the changes that these agentic coding aids may bring.
+
+Key considerations:
+
+- What workflow components and tasks make the most sense to use as
+  standards
+- How should these workflow components be containerized, and how can LLM
+  generated workflows be ensured to fit within a similar
+  containerization scheme?
+
+## General bughunt
+
+Bring your own bugs and fixes.
+
+# Other things!
+
+If you have further questions, please contact Nick Cooley at
+Nicholas(dot)cooley(at)ul(dot)ie.
