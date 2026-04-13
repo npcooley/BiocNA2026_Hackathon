@@ -30,6 +30,9 @@ supported.
 Participants will be expected to adhere to the [Bioconductor code of
 conduct](https://bioconductor.github.io/bioc_coc_multilingual/).
 
+If you are interested in participating, [please fill out this
+form](https://forms.gle/7jsVrEnhp74dBrXMA).
+
 # Documents and communication
 
 This README page will serve as a hub for documents, repos, and links
