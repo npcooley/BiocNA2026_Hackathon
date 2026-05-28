@@ -153,4 +153,4 @@ Bring your own bugs and fixes.
 # Other things!
 
 If you have further questions, please contact Nick Cooley at
-Nicholas(dot)cooley(at)ul(dot)ie.
+Nicholas(dot)cooley(at)ul(dot)ie or Lori Kern at lori(dot)shepherd(at)roswellpark(dot)org.
