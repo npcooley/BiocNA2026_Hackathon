@@ -40,7 +40,14 @@ associated with the event.
 
 ## Remote participation
 
-Information on remote participation will be included here.
+Remote participation is encouraged for folks who cannot attend in
+person. We will keep a [MS
+Teams](https://teams.microsoft.com/meet/359128117564526?p=K24Q4DVO9c2fQVicex)
+call open all across both days of the hackathon for general interaction.
+Once teams are formed, team leaders should start a Teams / Zoom call for
+their individual project. Additionally, a [zulip
+channel](https://community-bioc.zulipchat.com/join/j2wcgch26l4wjpcrqoox3ik5/)
+has been created for the hackathon!
 
 ## Location
 
@@ -146,6 +153,10 @@ Key considerations:
   generated workflows be ensured to fit within a similar
   containerization scheme?
 
+A
+[preprint](https://www.biorxiv.org/content/10.64898/2026.05.05.723092v2.full)
+covering this idea was also recently published!
+
 ## General bughunt
 
 Bring your own bugs and fixes.
@@ -153,4 +164,5 @@ Bring your own bugs and fixes.
 # Other things!
 
 If you have further questions, please contact Nick Cooley at
-Nicholas(dot)cooley(at)ul(dot)ie or Lori Kern at lori(dot)shepherd(at)roswellpark(dot)org.
+Nicholas(dot)cooley(at)ul(dot)ie or Lori Kern at
+lori(dot)shepherd(at)roswellpark(dot)org.
