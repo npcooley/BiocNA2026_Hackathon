@@ -51,7 +51,8 @@ has been created for the hackathon!
 
 ## Location
 
-Jack R. MacDonald Building, Seattle Children’s Research Institute
+[Jack R. MacDonald](https://www.seattlechildrens.org/locations/jrm/)
+Building, Seattle Children’s Research Institute
 
 # Projects
 
